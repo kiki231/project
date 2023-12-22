@@ -1,0 +1,65 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+body header {
+  background-color: black;
+  height: 50px;
+}
+.header0 {
+  float: left;
+  width: 40%;
+  height: 50px;
+  color: white;
+  text-align: center;
+  font-family: 'Times New Roman';
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.header1 {
+  float: left;
+  width: 15%;
+  height: 50px;
+  color: white;
+  text-align: center;
+  font-family: serif;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  transition: background-color 0.3s;
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-left: 40%;
+  margin-top: 20px;
+}
+.profile-info img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.user-details {
+  font-size: 16px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-left: 20px;
+}
+.gallery img {
+  width: calc(30% - 10px); /* Đặt chiều rộng của ảnh nhỏ hơn */
+  margin: 10px;
+  border-radius: 5px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký tài khoản</title>
+  <link rel="stylesheet" href="/project/register/register.css">
+
+</head>
+<body>
+  <form id="registration-form" class="container">
+    <h2>Đăng ký tài khoản</h2>
+    <input type="text" name="username" placeholder="Tên người dùng" required>
+    <br>
+    <input type="email" name="email" placeholder="Email" required>
+    <br>
+    <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
+    <span id="password-error" style="color: red;"></span>
+    <br>
+    <input type="submit" value="Đăng ký">
+    <p>Nếu bạn đã có tài khoản, <a href="/project/register/login.html">đăng nhập</a></p>
+  </form>
+
+  <script> // Viết pass rules
+    document.getElementById("registration-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Ngăn form gửi dữ liệu mặc định
+
+      // Lấy giá trị mật khẩu vừa nhập
+      var password = document.getElementById("password").value;
+
+      // Kiểm tra điều kiện mật khẩu
+      var lengthValid = password.length >= 8;
+      var letterRegex = /[a-zA-Z]/;
+      var numberRegex = /\d/;
+      var hasLetter = letterRegex.test(password);
+      var hasNumber = numberRegex.test(password);
+
+      if (lengthValid && hasLetter && hasNumber) {
+        // Mật khẩu hợp lệ, chuyển hướng đến home page sau khi đăng ký thành công
+        window.location.href = "/project/home/home.html";
+      } else {
+        // Thông báo lỗi nếu mật khẩu không hợp lệ
+        document.getElementById("password-error").textContent = "Mật khẩu phải chứa ít nhất 8 ký tự, một chữ cái và một số";
+      }
+    });
+  </script>
+
+</body>
+</html>
